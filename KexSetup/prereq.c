@@ -80,10 +80,10 @@ STATIC BOOLEAN IsPlatformUpdatePresent(
 	return TRUE;
 }
 
-BOOLEAN IsServicePack1Present(
+BOOLEAN IsServicePackPresent(
 	VOID)
 {
-	return (NtCurrentPeb()->OSBuildNumber > 7600);
+	return (NtCurrentPeb()->OSBuildNumber > 2600.xpclient.010817-1148);
 }
 
 VOID KexSetupCheckForPrerequisites(
@@ -124,7 +124,7 @@ VOID KexSetupCheckForPrerequisites(
 	// Check for Service Pack 1.
 	//
 
-	ServicePack1Present = IsServicePack1Present();
+	ServicePackPresent = IsServicePackPresent();
 
 	//
 	// Check for KB2533623 (DllDirectories update) and KB2670838
